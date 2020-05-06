@@ -8,6 +8,8 @@ module Jekyll
         super(name)
       end
 
+      private
+
       def gemspec
         @gemspec ||= MockGemspec.new(self)
       end
