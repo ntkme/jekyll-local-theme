@@ -1,21 +1,27 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("lib", __dir__)
-require "jekyll-local-theme/version"
+require_relative 'lib/jekyll/local_theme/version'
 
-Gem::Specification.new do |s|
-  s.name          = "jekyll-local-theme"
-  s.version       = Jekyll::LocalTheme::VERSION
-  s.authors       = ["なつき"]
-  s.email         = ["i@ntk.me"]
-  s.homepage      = "https://github.com/ntkme/jekyll-local-theme"
-  s.summary       = "Jekyll plugin for building Jekyll sites with any local theme"
+Gem::Specification.new do |spec|
+  spec.name          = 'jekyll-local-theme'
+  spec.version       = Jekyll::LocalTheme::VERSION
+  spec.authors       = ['なつき']
+  spec.email         = ['i@ntk.me']
+  spec.summary       = 'Jekyll plugin for building Jekyll sites with any local theme'
+  spec.homepage      = 'https://github.com/ntkme/jekyll-local-theme'
+  spec.license       = 'MIT'
+  spec.metadata      = {
+    'bug_tracker_uri' => "#{spec.homepage}/issues",
+    'documentation_uri' => "https://rubydoc.info/gems/#{spec.name}/#{spec.version}",
+    'source_code_uri' => "#{spec.homepage}/tree/v#{spec.version}",
+    'funding_uri' => 'https://github.com/sponsors/ntkme',
+    'rubygems_mfa_required' => 'true'
+  }
 
-  s.files         = `git ls-files lib`.split("\n")
-  s.require_paths = ["lib"]
-  s.license       = "MIT"
+  spec.files = Dir['lib/**/*.rb'] + ['LICENSE', 'README.md']
 
-  s.add_dependency "jekyll-remote-theme", "~> 0"
+  spec.required_ruby_version = '>= 2.4.0'
 
-  s.required_ruby_version = ">= 2.3.0"
+  spec.add_runtime_dependency 'bundler', '>= 1.2.0'
+  spec.add_runtime_dependency 'jekyll', '>= 4.0.0'
 end
