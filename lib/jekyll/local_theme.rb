@@ -16,7 +16,7 @@ module Jekyll
       site.config['theme'] = name
       site.theme = Theme.new(name, Jekyll.sanitized_path(Jekyll.sanitized_path(site.source, '_themes'), name))
 
-      Jekyll.logger.info 'Local Theme:', site.theme.root
+      Jekyll.logger.info 'Local theme:', site.theme.root
 
       site.send(:configure_include_paths)
       site.plugin_manager.require_theme_deps
