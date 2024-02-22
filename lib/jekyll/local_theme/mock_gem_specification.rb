@@ -11,5 +11,7 @@ module Jekyll
         @runtime_dependencies = runtime_dependencies
       end
     end
+
+    private_constant :MockGemSpecification
   end
 end
