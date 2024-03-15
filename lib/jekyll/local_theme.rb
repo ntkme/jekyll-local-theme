@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'local_theme/mock_gem_specification'
 require_relative 'local_theme/theme'
 require_relative 'local_theme/version'
 

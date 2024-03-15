@@ -21,7 +21,8 @@ Gem::Specification.new do |spec|
   spec.files = Dir['lib/**/*.rb'] + ['LICENSE', 'README.md']
 
   spec.required_ruby_version = '>= 2.4.0'
+  spec.required_rubygems_version = '>= 3.2.0'
 
-  spec.add_runtime_dependency 'bundler', '>= 1.2.0'
+  spec.add_runtime_dependency 'bundler', '>= 2.2.0'
   spec.add_runtime_dependency 'jekyll', '>= 4.0.0'
 end
