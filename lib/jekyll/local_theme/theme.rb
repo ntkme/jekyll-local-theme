@@ -7,7 +7,7 @@ module Jekyll
     # The local {Theme} on file system.
     class Theme < Jekyll::Theme
       def initialize(name, root)
-        gemspec = Gem::Util.glob_files_in_dir(::Bundler::Source::Path::DEFAULT_GLOB, root)
+        gemspec = Gem::Util.glob_files_in_dir(Bundler::Source::Path::DEFAULT_GLOB, root)
                            .min_by { |p| -p.split(File::SEPARATOR).size }
 
         if gemspec
