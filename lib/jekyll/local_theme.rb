@@ -9,10 +9,10 @@ module Jekyll
     module_function
 
     def init(site)
-      name = site.config['local_theme']
-      return unless name
+      path = site.config['local_theme']
+      return unless path
 
-      theme = Theme.new(Jekyll.sanitized_path(Jekyll.sanitized_path(site.source, '_themes'), name))
+      theme = Theme.new(Jekyll.sanitized_path(Jekyll.sanitized_path(site.source, '_themes'), path))
       site.theme = theme
       site.config['theme'] = theme.name
 
