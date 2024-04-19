@@ -12,10 +12,11 @@ module Jekyll
       name = site.config['local_theme']
       return unless name
 
-      site.config['theme'] = name
-      site.theme = Theme.new(name, Jekyll.sanitized_path(Jekyll.sanitized_path(site.source, '_themes'), name))
+      theme = Theme.new(Jekyll.sanitized_path(Jekyll.sanitized_path(site.source, '_themes'), name))
+      site.theme = theme
+      site.config['theme'] = theme.name
 
-      Jekyll.logger.info 'Local theme:', site.theme.root
+      Jekyll.logger.info 'Local theme:', theme.root
 
       site.send(:configure_include_paths)
       site.plugin_manager.require_theme_deps
